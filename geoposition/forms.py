@@ -2,7 +2,6 @@ from django import forms
 from django.utils.translation import ugettext_lazy as _
 
 from .widgets import GeopositionWidget
-from . import Geoposition
 
 
 class GeopositionField(forms.MultiValueField):
@@ -17,8 +16,6 @@ class GeopositionField(forms.MultiValueField):
             forms.DecimalField(label=_('longitude')),
         )
         kwargs['required'] = False
-        if 'initial' in kwargs:
-            kwargs['initial'] = Geoposition(*kwargs['initial'].split(','))
         super(GeopositionField, self).__init__(fields, **kwargs)
 
     def widget_attrs(self, widget):

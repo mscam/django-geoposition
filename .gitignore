@@ -5,4 +5,7 @@ MANIFEST
 *.pyc
 *.egg-info
 *.egg
+.DS_Store
+*.out
+*.db
 docs/_build/

@@ -10,15 +10,6 @@ class Location(models.Model):
         abstract = True
 
 
-class CharLocation(Location):
-    position = GeopositionField(
-        fields_class=models.CharField
-    )
-
-    def __unicode__(self):
-        return self.name
-
-
 class FloatLocation(Location):
     position = GeopositionField(
         fields_class=models.FloatField
@@ -37,6 +28,6 @@ class MultipleLocation(Location):
         longitude_field = 'position1_longitude',
     )
     position2 = GeopositionField(
-        latitude_field = 'position1_latitude',
-        longitude_field = 'position1_longitude',
+        latitude_field = 'position2_latitude',
+        longitude_field = 'position2_longitude',
     )
